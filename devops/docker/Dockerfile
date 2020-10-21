@@ -4,7 +4,8 @@ RUN apt-get update && \
     apt-get install -y --force-yes --no-install-recommends \
     	libzip-dev \
     	wget \
-        curl
+        curl \
+        wait-for-it
 
 RUN apt-get autoclean -y && rm -rf /var/lib/apt/lists/*
 

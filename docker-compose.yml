@@ -9,8 +9,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: app
-      MYSQL_ROOT_PASSWORD: app123
+      MYSQL_ROOT_PASSWORD: 123
     volumes:
       - dbdata:/var/lib/mysql/
 
@@ -44,6 +43,18 @@ services:
       - ./codebase:/var/www
       - ./devops/config/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./devops/logs/nginx/:/var/log/nginx
+
+  init-symfony:
+    build: ./devops/docker
+    container_name: init-symfony
+    volumes:
+      - ./:/home
+    depends_on:
+      - php-fpm
+      - nginx
+      - mysql
+    command:
+      - /home/devops/script/wait-for-mysql-up.sh
 
 volumes:
   dbdata:
