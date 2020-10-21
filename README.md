@@ -3,8 +3,10 @@
 1. Use latest version of Symfony 4 and install a new application
 
 2. Create a one-to-many relationship using the following tables:
-  a. Customers (Fields: uuid, firstName, lastName, dateOfBirth, status, createdAt, updatedAt, deletedAt, products).
-  b. Products (Fields: issn, name, status, createdAt, updatedAt, deletedAt, customer).
+  
+  - Customers (Fields: uuid, firstName, lastName, dateOfBirth, status, createdAt, updatedAt, deletedAt, products).
+  
+  - Products (Fields: issn, name, status, createdAt, updatedAt, deletedAt, customer).
 
 3. Create basic CRUD API methods using a RESTful approach. Make sure to authenticate the API requests and implement good Exception handling.
 
