@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Enum\StatusEnumType;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,7 +29,7 @@ class Product
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=25)
+     * @ORM\Column(type="StatusEnumType")
      */
     private $status;
 
@@ -49,7 +50,7 @@ class Product
 
     /**
      * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, referencedColumnName="uuid")
      */
     private $customer;
 

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Enum\StatusEnumType;
 use App\Repository\CustomerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -35,7 +36,7 @@ class Customer
     private $dateOfBirth;
 
     /**
-     * @ORM\Column(type="string", length=25)
+     * @ORM\Column(type="StatusEnumType")
      */
     private $status;
 

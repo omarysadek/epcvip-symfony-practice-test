@@ -2,7 +2,7 @@
 
 1. (OK) Use latest version of Symfony 4 and install a new application
 
-2. (OK) Create a one-to-many relationship using the following tables:
+2. (WIP) Create a one-to-many relationship using the following tables:
   
   - Customers (Fields: uuid, firstName, lastName, dateOfBirth, status, createdAt, updatedAt, deletedAt, products).
   
@@ -14,7 +14,7 @@
 
 5. Use Doctrine fixtures to load some sample data
 
-6. Allowed values on the “status” field: new, pending, in review, approved, inactive, deleted. Please make sure all new records have default values “new”.
+6. (WIP) Allowed values on the “status” field: new, pending, in review, approved, inactive, deleted. Please make sure all new records have default values “new”.
 
 7. Create a Command to look for products on “pending” for a week or more and send some sort of notification.
 
