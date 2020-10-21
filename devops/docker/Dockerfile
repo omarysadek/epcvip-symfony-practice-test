@@ -3,6 +3,7 @@ FROM php:7.4-fpm
 RUN apt-get update && \
     apt-get install -y --force-yes --no-install-recommends \
     	libzip-dev \
+    	wget \
         curl
 
 RUN apt-get autoclean -y && rm -rf /var/lib/apt/lists/*
@@ -14,6 +15,10 @@ RUN pecl install apcu
 RUN docker-php-ext-enable apcu
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN wget https://get.symfony.com/cli/installer -O - | bash
+
+RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
 RUN groupadd -g 1000 www
 
