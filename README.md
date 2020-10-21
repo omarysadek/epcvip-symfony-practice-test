@@ -1,4 +1,4 @@
-# epcvip-symfony-practice-test
+# EPCVIP Symfony practice test
 
 1. Use latest version of Symfony 4 and install a new application
 
