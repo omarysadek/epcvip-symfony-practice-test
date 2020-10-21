@@ -1,8 +1,8 @@
 # EPCVIP Symfony practice test
 
-1. Use latest version of Symfony 4 and install a new application
+1. (OK) Use latest version of Symfony 4 and install a new application
 
-2. Create a one-to-many relationship using the following tables:
+2. (OK) Create a one-to-many relationship using the following tables:
   
   - Customers (Fields: uuid, firstName, lastName, dateOfBirth, status, createdAt, updatedAt, deletedAt, products).
   
