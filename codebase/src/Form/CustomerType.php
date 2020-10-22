@@ -22,8 +22,7 @@ class CustomerType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Customer::class,
-            'csrf_protection' => false
+            'data_class' => Customer::class
         ]);
     }
 }

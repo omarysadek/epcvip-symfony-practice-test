@@ -12,7 +12,7 @@
 
 4. Design and implement the ability of having API requests and responses logged in a file as well as in a database table.
 
-5. Use Doctrine fixtures to load some sample data
+5. (WIP) Use Doctrine fixtures to load some sample data
 
 6. (OK) Allowed values on the “status” field: new, pending, in review, approved, inactive, deleted. Please make sure all new records have default values “new”.
 
