@@ -7,6 +7,8 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 
 abstract class BaseEnumType extends Type
 {
+    protected static $constantsArray = array();
+
     protected $name;
 
     protected $values = [];
@@ -39,5 +41,29 @@ abstract class BaseEnumType extends Type
     public function requiresSQLCommentHint(AbstractPlatform $platform)
     {
         return true;
+    }
+
+    public static function getConstants(): array
+    {
+        if (!isset(self::$constantsArray[self::class])) {
+            $reflect = new \ReflectionClass(self::class);
+            self::$constantsArray[self::class] = $reflect->getConstants();
+        }
+
+        return self::$constantsArray[self::class];
+    }
+
+    public static function getValues(): array
+    {
+        return array_values(self::getConstants());
+    }
+
+    public static function isValidValue($value, $caseSensitive = false): bool
+    {
+        if (is_null($value)) {
+            return false;
+        }
+
+        return in_array((is_int($value) ? $value : (!$caseSensitive ? strtolower($value) : $value)), self::getValues(), true);
     }
 }

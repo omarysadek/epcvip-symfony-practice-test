@@ -63,6 +63,7 @@ class Customer
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->setStatus(StatusEnumType::NEW_STATUS);
     }
 
     public function getUuid(): ?string
@@ -113,6 +114,11 @@ class Customer
 
     public function setStatus(string $status): self
     {
+        if (!StatusEnumType::isValidValue($status)) {
+            //todo -> handle good exception
+            throw new \Exception("invalid status enum type", 1);
+        }
+
         $this->status = $status;
 
         return $this;

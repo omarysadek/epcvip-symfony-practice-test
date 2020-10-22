@@ -54,6 +54,11 @@ class Product
      */
     private $customer;
 
+    public function __construct()
+    {
+        $this->setStatus(StatusEnumType::NEW_STATUS);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +95,11 @@ class Product
 
     public function setStatus(string $status): self
     {
+        if (!StatusEnumType::isValidValue($status)) {
+            //todo -> handle good exception
+            throw new \Exception("invalid status enum type", 1);
+        }
+
         $this->status = $status;
 
         return $this;

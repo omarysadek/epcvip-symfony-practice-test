@@ -14,12 +14,12 @@
 
 5. Use Doctrine fixtures to load some sample data
 
-6. (WIP) Allowed values on the “status” field: new, pending, in review, approved, inactive, deleted. Please make sure all new records have default values “new”.
+6. (OK) Allowed values on the “status” field: new, pending, in review, approved, inactive, deleted. Please make sure all new records have default values “new”.
 
 7. Create a Command to look for products on “pending” for a week or more and send some sort of notification.
 
 8. Implement forms and validation for both entities. (BONUS: or create a single form with prototyping to allow adding multiple products to the customer).
 
-9. Upload the application to a GitHub repository and share the code with us.
+9. (OK) Upload the application to a GitHub repository and share the code with us.
 
 Feel free to use any approach you consider it’s the best and reliable. We encourage you to use the Symfony documentation as your primary resource to accomplish this task.
