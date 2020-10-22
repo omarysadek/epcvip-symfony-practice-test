@@ -36,12 +36,12 @@ class Customer
     private $dateOfBirth;
 
     /**
-     * @ORM\Column(type="StatusEnumType")
+     * @ORM\Column(type="StatusEnumType", nullable=false)
      */
     private $status;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=false)
      */
     private $createdAt;
 
@@ -57,6 +57,7 @@ class Customer
 
     /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="customer")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $products;
 
