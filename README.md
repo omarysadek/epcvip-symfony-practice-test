@@ -8,7 +8,7 @@
   
   - Products (Fields: issn, name, status, createdAt, updatedAt, deletedAt, customer).
 
-3. Create basic CRUD API methods using a RESTful approach. Make sure to authenticate the API requests and implement good Exception handling.
+3. (WIP) Create basic CRUD API methods using a RESTful approach. Make sure to authenticate the API requests and implement good Exception handling.
 
 4. Design and implement the ability of having API requests and responses logged in a file as well as in a database table.
 
@@ -18,7 +18,7 @@
 
 7. Create a Command to look for products on “pending” for a week or more and send some sort of notification.
 
-8. Implement forms and validation for both entities. (BONUS: or create a single form with prototyping to allow adding multiple products to the customer).
+8. (WIP) Implement forms and validation for both entities. (BONUS: or create a single form with prototyping to allow adding multiple products to the customer).
 
 9. (OK) Upload the application to a GitHub repository and share the code with us.
 
