@@ -5,7 +5,8 @@ RUN apt-get update && \
     	libzip-dev \
     	wget \
         curl \
-        wait-for-it
+        wait-for-it \
+        nano
 
 RUN apt-get autoclean -y && rm -rf /var/lib/apt/lists/*
 
