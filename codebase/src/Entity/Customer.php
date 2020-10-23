@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
@@ -16,6 +17,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 class Customer
 {
     /**
+     * @Groups({"customer", "product"})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="UUID")
      * @ORM\Column(type="guid")
@@ -23,43 +25,51 @@ class Customer
     private $uuid;
 
     /**
+     * @Groups({"customer", "product"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $firstName;
 
     /**
+     * @Groups({"customer", "product"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $lastName;
 
     /**
+     * @Groups({"customer", "product"})
      * @ORM\Column(type="date", nullable=true)
      */
     private $dateOfBirth;
 
     /**
+     * @Groups({"customer", "product"})
      * @ORM\Column(type="StatusEnumType", nullable=false)
      */
     private $status;
 
     /**
+     * @Groups({"customer", "product"})
      * @ORM\Column(type="datetime", nullable=false)
      * @Gedmo\Timestampable(on="create")
      */
     private $createdAt;
 
     /**
+     * @Groups({"customer", "product"})
      * @ORM\Column(type="datetime", nullable=true)
      * @Gedmo\Timestampable(on="update")
      */
     private $updatedAt;
 
     /**
+     * @Groups({"customer", "product"})
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $deletedAt;
 
     /**
+     * @Groups({"customer"})
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="customer")
      * @ORM\JoinColumn(nullable=true)
      */
