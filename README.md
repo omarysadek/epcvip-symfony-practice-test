@@ -23,3 +23,8 @@
 9. (OK) Upload the application to a GitHub repository and share the code with us.
 
 Feel free to use any approach you consider it’s the best and reliable. We encourage you to use the Symfony documentation as your primary resource to accomplish this task.
+
+TODO
+- Init database with docker
+- General Exception
+- Validation
