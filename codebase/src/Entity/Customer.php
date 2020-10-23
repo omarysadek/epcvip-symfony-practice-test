@@ -7,9 +7,11 @@ use App\Repository\CustomerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
+ * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=true, hardDelete=false)
  */
 class Customer
 {
@@ -42,11 +44,13 @@ class Customer
 
     /**
      * @ORM\Column(type="datetime", nullable=false)
+     * @Gedmo\Timestampable(on="create")
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Gedmo\Timestampable(on="update")
      */
     private $updatedAt;
 

@@ -5,9 +5,11 @@ namespace App\Entity;
 use App\Enum\StatusEnumType;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=true, hardDelete=false)
  */
 class Product
 {
@@ -35,11 +37,13 @@ class Product
 
     /**
      * @ORM\Column(type="datetime", nullable=false)
+     * @Gedmo\Timestampable(on="create")
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Gedmo\Timestampable(on="update")
      */
     private $updatedAt;
 

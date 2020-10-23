@@ -2,7 +2,7 @@
 
 1. (OK) Use latest version of Symfony 4 and install a new application
 
-2. (WIP) Create a one-to-many relationship using the following tables:
+2. (OK) Create a one-to-many relationship using the following tables:
   
   - Customers (Fields: uuid, firstName, lastName, dateOfBirth, status, createdAt, updatedAt, deletedAt, products).
   
@@ -18,7 +18,7 @@
 
 7. Create a Command to look for products on “pending” for a week or more and send some sort of notification.
 
-8. (WIP) Implement forms and validation for both entities. (BONUS: or create a single form with prototyping to allow adding multiple products to the customer).
+8. (OK) Implement forms and validation for both entities. (BONUS: or create a single form with prototyping to allow adding multiple products to the customer).
 
 9. (OK) Upload the application to a GitHub repository and share the code with us.
 

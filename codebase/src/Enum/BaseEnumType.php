@@ -45,12 +45,14 @@ abstract class BaseEnumType extends Type
 
     public static function getConstants(): array
     {
-        if (!isset(self::$constantsArray[self::class])) {
-            $reflect = new \ReflectionClass(self::class);
-            self::$constantsArray[self::class] = $reflect->getConstants();
+        $calledClass = get_called_class();
+
+        if (!isset(self::$constantsArray[$calledClass])) {
+            $reflect = new \ReflectionClass($calledClass);
+            self::$constantsArray[$calledClass] = $reflect->getConstants();
         }
 
-        return self::$constantsArray[self::class];
+        return self::$constantsArray[$calledClass];
     }
 
     public static function getValues(): array
