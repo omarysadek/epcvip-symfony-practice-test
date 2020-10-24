@@ -10,7 +10,7 @@
 
 3. (OK) Create basic CRUD API methods using a RESTful approach. Make sure to authenticate the API requests and implement good Exception handling.
 
-4. Design and implement the ability of having API requests and responses logged in a file as well as in a database table.
+4. (OK) Design and implement the ability of having API requests and responses logged in a file as well as in a database table.
 
 5. (OK) Use Doctrine fixtures to load some sample data
 
