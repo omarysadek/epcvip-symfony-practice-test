@@ -1,19 +1,20 @@
 monolog:
+    channels: ["http_log_database", "http_log_file"]
     handlers:
         main:
             type: stream
             path: "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
-            channels: ["!event"]
-        # uncomment to get logging in your browser
-        # you may have to allow bigger header sizes in your Web server configuration
-        #firephp:
-        #    type: firephp
-        #    level: info
-        #chromephp:
-        #    type: chromephp
-        #    level: info
+            channels: ["!event", "!http_log_database"]
         console:
             type: console
             process_psr_3_messages: false
-            channels: ["!event", "!doctrine", "!console"]
+            channels: ["!event", "!doctrine", "!console", "!http_log_database"]
+        http_log_database:
+            type: service
+            id: App\Component\Handler\MonologDBHandler
+            channels: ["http_log_database"]
+        http_log_file:
+            type: rotating_file
+            path: "%kernel.logs_dir%/%kernel.environment%_http.log"
+            channels: ["http_log_file"]
