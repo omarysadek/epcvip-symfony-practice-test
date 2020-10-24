@@ -16,7 +16,7 @@
 
 6. (OK) Allowed values on the “status” field: new, pending, in review, approved, inactive, deleted. Please make sure all new records have default values “new”.
 
-7. Create a Command to look for products on “pending” for a week or more and send some sort of notification.
+7. (OK) Create a Command to look for products on “pending” for a week or more and send some sort of notification.
 
 8. (OK) Implement forms and validation for both entities. (BONUS: or create a single form with prototyping to allow adding multiple products to the customer).
 
@@ -28,3 +28,8 @@ TODO
 - Init database with docker
 - General Exception
 - Validation
+
+
+
+
+mailtrap.io

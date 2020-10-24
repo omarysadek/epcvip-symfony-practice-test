@@ -1,0 +1,6 @@
+<h1>List of products on "pending" for a week or more</h1>
+<ul>
+	{% for product in products %}
+		<li>{{ product.issn|e }}: - {{ product.name|e }}</li>
+	{% endfor %}
+</ul>
