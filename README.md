@@ -77,7 +77,7 @@ sudo docker-compose up;
 
 
 Then upload it here : https://app.vagrantup.com/
-## Todo Lis
+## Todo List
 
 - General Exception
 - swagger
