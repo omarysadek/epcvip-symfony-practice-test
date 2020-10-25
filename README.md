@@ -40,7 +40,7 @@ Feel free to use any approach you consider it’s the best and reliable. We enco
 
 ## Instruction
 
-running locally with docker-compose
+running locally with docker-compose (will initiate the project automatically)
 
 ```
 sudo docker-compose up;
@@ -76,7 +76,6 @@ sudo docker-compose up;
 | Database    | dev          |
 
 
-Then upload it here : https://app.vagrantup.com/
 ## Todo
 
 - General Exception
