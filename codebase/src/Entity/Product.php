@@ -7,6 +7,7 @@ use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -25,12 +26,14 @@ class Product
     /**
      * @Groups({"product", "customer"})
      * @ORM\Column(type="string", length=10, nullable=true, unique=true)
+     * @Assert\Regex("/^[0-9a-zA-Z]{4}\-[0-9a-zA-Z]{4}$/")
      */
     private $issn;
 
     /**
      * @Groups({"product", "customer"})
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(max=255)
      */
     private $name;
 
@@ -109,7 +112,6 @@ class Product
     public function setStatus(string $status): self
     {
         if (!StatusEnumType::isValidValue($status)) {
-            //todo -> handle good exception
             throw new \Exception("invalid status enum type", 1);
         }
 

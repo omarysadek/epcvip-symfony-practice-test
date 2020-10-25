@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
@@ -27,18 +28,21 @@ class Customer
     /**
      * @Groups({"customer", "product"})
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(max=255)
      */
     private $firstName;
 
     /**
      * @Groups({"customer", "product"})
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(max=255)
      */
     private $lastName;
 
     /**
      * @Groups({"customer", "product"})
      * @ORM\Column(type="date", nullable=true)
+     * @Assert\LessThan("-8 years")
      */
     private $dateOfBirth;
 
@@ -130,7 +134,6 @@ class Customer
     public function setStatus(string $status): self
     {
         if (!StatusEnumType::isValidValue($status)) {
-            //todo -> handle good exception
             throw new \Exception("invalid status enum type", 1);
         }
 

@@ -142,7 +142,7 @@ class Log implements \JsonSerializable
             'uri' => $this->getUri(),
             'requestContent' => $this->getRequestContent(),
             'bodyContent' => $this->getBodyContent(),
-            'userId' => $this->getUser()->getId()
+            'userId' => $this->getUser() ? $this->getUser()->getId() : 'anonymous'
         ];
     }
 }

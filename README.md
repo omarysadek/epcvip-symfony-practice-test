@@ -26,10 +26,7 @@ Feel free to use any approach you consider it’s the best and reliable. We enco
 
 TODO
 - Init database with docker
+- instructions : mailtrap.io
 - General Exception
-- Validation
-
-
-
-
-mailtrap.io
+- swagger
+- tests
