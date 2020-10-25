@@ -168,6 +168,64 @@ curl --location --request POST 'http://localhost/products' \
 }
 ```
 
+- Create a single form with prototyping to allow adding multiple products to the customer: http://localhost/customers (POST)
+```
+curl --location --request POST 'http://localhost/customers' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDM2NTMyODAsImV4cCI6MTYwMzY1Njg4MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYXBwIn0.pArjDUV5ciFMf7AHctcLMxSfYfcxrg4g7A_IjqNTLRoTSF6l10qRV1sWXzha961h24Lslc1cIKeZLmpTWDHTefdztFK2mbtbsq_tAmDcy41BBJ4hUDTvylDL3hopcQQhLuEOLIwpyad7sJlk1Ny9IvBpHz_IH_B9_hr-BVlpH0YwXDbGLiTf5dfAJUY66GCXn2KYtG01yLjjVHTxnlP5uo9Cx_rg_6Ilk7ay6JHBPLmzlGB-1SkfRRSXesmdiTxJcqlUQ_Qhitur5IzhrZCBNWL7Pi_gKKi8xUdCvRsf_hy2PfU3wYh9q-RjrqGIsFlYfV7q--Mf77y1Ibt-3DqrtkEymc-MyVbOeVDIfB3V8hMH2Usd19zmCuoCUy3SalNo6nFFI0f0lpHH7Xvxyj4_9tu3kwysttkxy43tuhSgJtlR5ZwIZJuGZog_HmhLAGnWv0a_M9pHckzAXxo29oXf8G3VrWekLDTyWQSJqniqc3jtGz-vMeRBHqo93yoOe-3eHsUPPwXGRV4aGsE3vLXiznnzklK4ZmfYCN28NbiRWSfPVR7deuZSMkZeQmqCbVEETbMaq3TbZBtVtBb9BU5gETDjKmrQta5gXVwlQIbDJ1vN_KHd4krldvSjMxT0j6lb2l09FmvbOEDEvdnNY5RL_FzwBI2V5B7i5_b1y68gWcw' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: sf_redirect=%7B%22token%22%3A%2222cc3c%22%2C%22route%22%3A%22app_customer_new%22%2C%22method%22%3A%22POST%22%2C%22controller%22%3A%7B%22class%22%3A%22App%5C%5CController%5C%5CCustomerController%22%2C%22method%22%3A%22new%22%2C%22file%22%3A%22%5C%2Fvar%5C%2Fwww%5C%2Fsrc%5C%2FController%5C%2FCustomerController.php%22%2C%22line%22%3A38%7D%2C%22status_code%22%3A201%2C%22status_text%22%3A%22Created%22%7D' \
+--data-raw '{
+    "firstName": "Omar",
+    "lastName": "SADEK",
+    "dateOfBirth": "1988-01-01",
+    "status": "new",
+    "products" : [
+        {
+            "issn": "iu34-g471",
+            "name": "first product",
+            "status": "pending"
+        },
+        {
+            "issn": "iu34-g472",
+            "name": "second product"
+        }
+    ]
+}'
+```
+```
+{
+    "data": {
+        "uuid": "143b55d5-16fb-11eb-944f-0242ac130005",
+        "firstName": "Omar",
+        "lastName": "SADEK",
+        "dateOfBirth": "1988-01-01T00:00:00+00:00",
+        "status": "new",
+        "createdAt": "2020-10-25T19:48:39+00:00",
+        "updatedAt": "2020-10-25T19:48:39+00:00",
+        "deletedAt": null,
+        "products": [
+            {
+                "id": 13,
+                "issn": "iu34-g471",
+                "name": "first product",
+                "status": "pending",
+                "createdAt": "2020-10-25T19:48:39+00:00",
+                "updatedAt": "2020-10-25T19:48:39+00:00",
+                "deletedAt": null
+            },
+            {
+                "id": 14,
+                "issn": "iu34-g472",
+                "name": "second product",
+                "status": "new",
+                "createdAt": "2020-10-25T19:48:39+00:00",
+                "updatedAt": "2020-10-25T19:48:39+00:00",
+                "deletedAt": null
+            }
+        ]
+    }
+}
+```
 
 ## Todo
 

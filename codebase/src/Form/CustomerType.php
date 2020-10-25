@@ -30,7 +30,6 @@ class CustomerType extends AbstractType
             ->add('products', CollectionType::class, [
                 'entry_type' => ProductType::class,
                 'allow_add' => true,
-                'allow_delete' => true,
                 'by_reference' => false
             ])
         ;

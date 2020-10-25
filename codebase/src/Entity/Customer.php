@@ -74,7 +74,7 @@ class Customer
 
     /**
      * @Groups({"customer"})
-     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="customer")
+     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="customer", cascade={"PERSIST"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $products;
