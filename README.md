@@ -25,8 +25,7 @@
 Feel free to use any approach you consider it’s the best and reliable. We encourage you to use the Symfony documentation as your primary resource to accomplish this task.
 
 TODO
-- Init database with docker
-- instructions : mailtrap.io
+- instructions & documentation : mailtrap.io
 - General Exception
 - swagger
 - tests

@@ -24,6 +24,11 @@ then
 	echo "public.pem copied to symfony folder"
 fi
 
-#php bin/console doctrine:database:create
-#php bin/console doctrine:schema:create
-#php bin/console doctrine:fixtures:load
+if /home/codebase/bin/console doctrine:database:create
+then
+	php /home/codebase/bin/console doctrine:schema:create
+	php /home/codebase/bin/console doctrine:fixtures:load -q
+	echo "creating schema and populate it with fixtures"
+fi
+
+exit 0
