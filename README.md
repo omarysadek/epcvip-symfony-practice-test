@@ -41,7 +41,7 @@ Feel free to use any approach you consider it’s the best and reliable. We enco
 
 ## Instruction
 
-running locally with docker-compose (will initiate the project automatically)
+running locally with docker-compose (will initiate the project automatically, create DB and load some fixtures)
 
 ```
 sudo docker-compose up;
@@ -49,7 +49,7 @@ sudo docker-compose up;
 
 ## Parameters
 
-#### website
+#### Website
 
 | Application     | Port | Internal Port | URL                               |
 |-----------------|------|---------------|-----------------------------------|
