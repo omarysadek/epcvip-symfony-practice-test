@@ -56,6 +56,13 @@ sudo docker-compose up;
 | mysql           | 3306 | 3306          | 127.0.0.1                         |
 | adminer         | 8080 | 8080          | http://127.0.0.1:8080/            |
 
+#### API Authentication credential 
+
+| Field       | Value                         |
+|-------------|-------------------------------|
+| Username    | app                           |
+| Password    | 123                           |
+
 #### Mailtrap
 
 | Field       | Value                         |
