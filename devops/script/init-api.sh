@@ -1,5 +1,11 @@
 #!/bin/bash
 
+cd /home/codebase/
+
+composer install
+
+cd
+
 if [ ! -f "/home/codebase/.env.local" ]
 then
 	cp /home/devops/config/symfony/.env.local /home/codebase/.env.local
@@ -24,7 +30,7 @@ then
 	echo "public.pem copied to symfony folder"
 fi
 
-if /home/codebase/bin/console doctrine:database:create
+if php /home/codebase/bin/console doctrine:database:create
 then
 	php /home/codebase/bin/console doctrine:schema:create
 	php /home/codebase/bin/console doctrine:fixtures:load -q
