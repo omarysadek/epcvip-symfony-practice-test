@@ -232,4 +232,6 @@ curl --location --request POST 'http://localhost/customers' \
 - General Exception
 - swagger
 - tests
-- Using DTO https://www.thinktocode.com/2018/04/02/symfony-4-rest-api-part-2-data-transfer-object/
+- Using DTO 
+  https://www.thinktocode.com/2018/04/02/symfony-4-rest-api-part-2-data-transfer-object/
+  https://medium.com/@a.adendrata/converting-dto-and-entity-c24cba9cef4
